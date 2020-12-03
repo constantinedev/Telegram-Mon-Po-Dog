@@ -9,7 +9,7 @@ from telethon.utils import get_input_peer
 #LOGGING FORMATE AND DETIALS
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.WARNING)
 
-bot = TelegramClient('MON_PO_DOG', API_ID, API_HASH)#.start(bot_token=BOT_TOKEN)
+bot = TelegramClient('MON_PO_DOG', API_ID, API_HASH)
 
 @bot.on(events.NewMessage)
 async def mon(msg):
