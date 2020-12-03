@@ -66,6 +66,8 @@ async def mon(msg):
         print('MSG ID: ' + str(msg_id))
         print('MSG INPUT: ' + str(msg_input))
         print('CONTENT:\n' + str(msginfo.text))
+        #print(msginfo.stringify())
+        #print(msg_entity)
 
     elif Peer_U.findall(str(PeerChecker)):
         print('-------------CHAT DEBUG-------------')
