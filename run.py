@@ -1,4 +1,4 @@
-import re, os, sys, csv, json, datetime, sqlite3, configparser, logging
+import re, os, sys, csv, json, datetime, logging
 from re import findall
 from sqlite3 import Error
 from telethon import TelegramClient, events, utils, functions, sync, Button, connection, helpers, types
@@ -8,18 +8,6 @@ from telethon.utils import get_input_peer
 
 #LOGGING FORMATE AND DETIALS
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.WARNING)
-
-##INFO OF BOT AND READ FROM CONFIG.INI
-cnf = configparser.ConfigParser()
-cnf.read('config.ini')
-API_ID = cnf['USER_INFO']['API_ID']
-API_HASH = cnf['USER_INFO']['API_HASH']
-BOT_TOKEN = cnf['BOT_INFO']['BOT_TOKEN']
-ADMIN_CHAT_ID = cnf['GROUP_INFO']['ADMIN_CHAT_ID']
-BOT_CHAT_ID = cnf['BOT_INFO']['BOT_CHAT_ID']
-
-SEND_TO_GROUP = int(ADMIN_CHAT_ID)
-SEND_TO_BOT = int(BOT_CHAT_ID)
 
 bot = TelegramClient('MON_PO_DOG', API_ID, API_HASH)#.start(bot_token=BOT_TOKEN)
 
