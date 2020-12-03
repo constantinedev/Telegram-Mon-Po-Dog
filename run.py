@@ -17,7 +17,7 @@ bot = TelegramClient('MON_PO_DOG', API_ID, API_HASH)
 @bot.on(events.NewMessage)
 async def mon(msg):
     ###SENDER INFO
-    senderinfo = await msg.get_sender() #提取所有陬訊人資訊
+    senderinfo = await msg.get_sender() #提取所有發訊人資訊
     sender_entity = await bot.get_entity(senderinfo) # = senderinfo
     sender_peer = await bot.get_input_entity(senderinfo) #發訊人USER_ID + ACCESS_HASH(完整資訊)
     PeerID = utils.get_peer(sender_peer) #提取 sender_peer 內的 Peer(完整資訊) 範例：PeerUser(user_id=1376181547)
