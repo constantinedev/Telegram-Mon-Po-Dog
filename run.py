@@ -74,7 +74,6 @@ async def mon(msg):
 
     elif Peer_U.findall(str(PeerChecker)):
         print('-------------CHAT DEBUG-------------')
-        #print('CHANNEL INFO: ' + str(DEBUG))
         print('------------SENDER DEBUG------------')
         #print(sender_entity.stringify())
         #print('SENDER INFO PEER: ' + str(sender_peer))
