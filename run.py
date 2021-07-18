@@ -90,8 +90,14 @@ async def mon(msg):
         print('MSG INPUT: ' + str(msg_input))
         print('CONTENT:\n' + str(msginfo.text))
         #print(msginfo.stringify())
-        #print(msg_entity)    
+        #print(msg_entity)
 
-bot.start()
-with bot:
+bot.on(events.NewMesage(pattern='/start'))
+async def startmsg(event):
+    await event.reply('Welcome To Auto reply message\nThe bot is working')
+
+def main():
     bot.run_until_disconnected()
+        
+if __name__ == '__main__':
+    main()
