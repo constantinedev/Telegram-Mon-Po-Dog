@@ -92,7 +92,7 @@ async def mon(msg):
         #print(msginfo.stringify())
         #print(msg_entity)
 
-bot.on(events.NewMesage(pattern='/start'))
+@bot.on(events.NewMesage(pattern='/start'))
 async def startmsg(event):
     await event.reply('Welcome To Auto reply message\nThe bot is working')
 
