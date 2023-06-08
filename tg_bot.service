@@ -1,0 +1,14 @@
+[Unit]
+Descraption='App Service'
+After=network.target
+
+[Service]
+#Type=simple
+User = user
+#Groups = user
+WorkingDirectory=/home/user/Applications/WebApp/app_project
+ExecStart=/usr/bin/python3 /home/user/Applications/WebApp/app_project/run.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
