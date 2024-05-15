@@ -97,6 +97,7 @@ async def startmsg(event):
     await event.reply('Welcome To Auto reply message\nThe bot is working')
 
 def main():
+    bot.start()
     bot.run_until_disconnected()
         
 if __name__ == '__main__':
