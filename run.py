@@ -20,11 +20,14 @@ async def mon(msg):
     senderinfo = await msg.get_sender() #提取所有發訊人資訊
     sender_entity = await bot.get_entity(senderinfo) # = senderinfo
     sender_peer = await bot.get_input_entity(senderinfo) #發訊人USER_ID + ACCESS_HASH(完整資訊)
+    ###
+    InPut_User = utils.get_input_user(senderinfo) #提取發訊人所有資料
+    sender_id = InPut_User.user_id #從發訊人資料中提取 USER ID
+    ###
     PeerID = utils.get_peer(sender_peer) #提取 sender_peer 內的 Peer(完整資訊) 範例：PeerUser(user_id=1376181547)
     Peer_UserID = utils.get_peer_id(sender_peer) #提取 sender_peer 內的 User ID(獨立的User ID)
     Peer_UserHASH = sender_peer.access_hash #提取從 Peer_User 中的 access_hash
-    InPut_User = utils.get_input_user(senderinfo) #提取發訊人所有資料
-    sender_id = InPut_User.user_id #從發訊人資料中提取 USER ID
+    ####
     sender_dp_name = utils.get_display_name(senderinfo) #提取發訊人完整顯示名稱
     if senderinfo.username is None: #提取並檢測發訊人使用者名稱，如果沒有設定即‘未設定’，如果有即加入@ 範例：@Anonymous
         sender_uid = '未設定'
@@ -37,7 +40,7 @@ async def mon(msg):
 
     ###MSG INFO
     msginfo = msg.message #提取訊息內容
-    msg_entity = await bot.get_messages(senderinfo) #以 utils API讀取完整訊息
+    # msg_entity = await bot.get_messages(senderinfo) #以 utils API讀取完整訊息
     msg_input = utils.get_input_message(msginfo) #完整的Message ID資
     msg_id = utils.get_message_id(msginfo) #獨立的Message ID資訊
     PeerChecker = msginfo.peer_id #檢測訊息的去向在Channel或Chat
